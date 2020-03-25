@@ -2,11 +2,11 @@
 
 Dataset: [MNIST](https://www.kaggle.com/c/digit-recognizer)
 
-NOTE:
+### How to run:
 
-Before runing experiments please generate train & valid `.csv` files.
+Firstly please generate train & valid `.csv` files.
 
-You can do this with something like this:
+You can do this with following:
 
 ```python
 >>> from pandas import read_csv
@@ -17,4 +17,14 @@ You can do this with something like this:
 >>>
 >>> train.to_csv("data/train.csv", index=False)
 >>> valid.to_csv("data/valid.csv", index=False)
+```
+
+Now you can run experiments with command like this:
+
+```bash
+python src/main.py \
+--train_data data/train.csv \
+--valid_data data/valid.csv \
+--lr 0.001 \
+--gpus 1
 ```
